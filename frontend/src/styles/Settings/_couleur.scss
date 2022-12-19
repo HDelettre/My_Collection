@@ -1,0 +1,10 @@
+$couleur_primaire: red;
+$couleur_secondaire: #003580;
+$couleur_tertiaire: #579eff;
+$couleur_quatre: #C8C8C8;
+
+$couleur_background: #eeeeee;
+$couleur_background_light: lighten($couleur_background, 10%);
+$couleur_background_dark: darken($couleur_background, 20%);
+
+$couleur_fonts: black;

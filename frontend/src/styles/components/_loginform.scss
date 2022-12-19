@@ -1,0 +1,24 @@
+.login_form {
+  width: 25%;
+  margin: $margin_xlarge;
+  border: 2px solid $couleur_tertiaire;
+  border-radius: $radius_medium;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: $margin_large;
+
+  &--input {
+    margin: $margin_large;
+    border: 1px solid $couleur_secondaire;
+    padding: $margin_small;
+  }
+
+  &--error {
+    color: $couleur_primaire;
+    text-align: center;
+    margin: $margin_medium_large;
+  }
+}

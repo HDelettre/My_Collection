@@ -1,0 +1,212 @@
+* {
+  box-sizing: content-box;
+  font-family: "Rubik";
+  color: black;
+  background-color: #eeeeee;
+  font-size: 14px;
+}
+
+body {
+  max-width: 1200px;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.titlebloc {
+  width: 80%;
+  align-self: flex-start;
+  color: #003580;
+  background-color: #eeeeee;
+  border-bottom: 2px solid #579eff;
+  border-left: 2px solid #579eff;
+  border-radius: 8px;
+  padding: 8px;
+  margin: 12px;
+  margin-left: 30px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.navbar {
+  width: 95%;
+  background-color: #C8C8C8;
+  margin: 12px;
+  border: 2px solid #003580;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.centerbar {
+  width: 95%;
+  margin: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bouton {
+  background-color: #579eff;
+  color: yellow;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 14px;
+  text-align: center;
+  margin-left: 12px;
+  cursor: pointer;
+  width: 120px;
+  transition: 500ms;
+  border: 2px solid #579eff;
+}
+.bouton:hover {
+  background-color: #003580;
+}
+.bouton_select {
+  border: 2px solid #003580;
+}
+.bouton_year {
+  background-color: #bbbbbb;
+  color: #003580;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 1px solid #003580;
+  border-radius: 16px;
+  margin: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  max-width: 60px;
+  cursor: pointer;
+}
+
+.icons {
+  color: #003580;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.spinloader {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.spinloader:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 8px;
+  box-sizing: border-box;
+  border: 32px solid #fff;
+  border-color: red transparent #003580 transparent;
+  -webkit-animation: spinloader 1.2s infinite;
+          animation: spinloader 1.2s infinite;
+}
+
+@-webkit-keyframes spinloader {
+  0% {
+    transform: rotate(0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+
+@keyframes spinloader {
+  0% {
+    transform: rotate(0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
+.header {
+  display: flex;
+  width: 95%;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 4px solid #579eff;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.header_logo {
+  width: 15%;
+}
+.header_logo img {
+  width: 90%;
+}
+.header_title {
+  width: 70%;
+  text-align: center;
+  font-family: "Open Sans";
+  color: #003580;
+  line-height: 30px;
+}
+.header_title h1 {
+  font-size: 30px;
+}
+
+.navigation {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.navigation_card {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+.navigation_card img {
+  width: 95%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+}
+
+.login_form {
+  width: 25%;
+  margin: 20px;
+  border: 2px solid #579eff;
+  border-radius: 16px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+.login_form--input {
+  margin: 15px;
+  border: 1px solid #003580;
+  padding: 5px;
+}
+.login_form--error {
+  color: red;
+  text-align: center;
+  margin: 12px;
+}/*# sourceMappingURL=styles.css.map */

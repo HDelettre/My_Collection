@@ -1,0 +1,19 @@
+* {
+  box-sizing: content-box;
+  font-family: $font_style_std;
+  color: $couleur_fonts;
+  background-color: $couleur_background;
+  font-size: $font_standard;
+}
+
+body {
+  max-width: 1200px;  
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
