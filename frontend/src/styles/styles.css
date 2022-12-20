@@ -25,10 +25,11 @@ body {
   background-color: #eeeeee;
   border-bottom: 2px solid #579eff;
   border-left: 2px solid #579eff;
-  border-radius: 8px;
+  border-bottom-left-radius: 8px;
   padding: 8px;
+  padding-left: 30px;
   margin: 12px;
-  margin-left: 30px;
+  margin-left: 45px;
   font-size: 20px;
   font-weight: 600;
 }
@@ -90,6 +91,21 @@ body {
   color: #003580;
   font-size: 22px;
   cursor: pointer;
+}
+
+.error_message {
+  font-size: 22px;
+  font-weight: 600;
+  color: red;
+  margin: 8px;
+  border: 2px solid red;
+  padding: 12px;
+}
+.error_message .icons {
+  color: red;
+  font-size: 22px;
+  margin: 0 8px;
+  cursor: none;
 }
 
 .spinloader {
@@ -209,4 +225,98 @@ body {
   color: red;
   text-align: center;
   margin: 12px;
+}
+
+.admin {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.admin_form {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 1px solid #579eff;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 8px;
+  box-sizing: content-box;
+}
+.admin_form--icons {
+  width: 40%;
+  text-align: center;
+  margin: 5px;
+  position: relative;
+  padding: 12px;
+}
+.admin_form--input {
+  width: 40%;
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+}
+.admin_form--insert {
+  opacity: 0;
+  position: absolute;
+  left: 44%;
+  width: 22px;
+}
+.admin_status {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-self: stretch;
+  border: 1px solid #579eff;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 8px;
+  box-sizing: content-box;
+}
+.admin_status--picture {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.admin_status--picture img {
+  width: 90%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.admin_status--right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.admin_login {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #579eff;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 8px;
+  box-sizing: content-box;
+}
+.admin_login--champs {
+  margin: 8px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 80%;
+  margin-right: 30px;
+}
+.admin_login--champs label {
+  margin-right: 12px;
+}
+.admin_login--champs input {
+  width: 40%;
+  padding: 5px;
+  margin: 5px;
 }/*# sourceMappingURL=styles.css.map */

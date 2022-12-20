@@ -21,7 +21,7 @@ const selectPort = portData => {
   }
   return false;
 };
-const port = selectPort(process.env.PORT_SERVER || '8000');
+const port = selectPort(process.env.PORT_SERVER || '5000');
 app.set('port', port);
 
 // ERRORS

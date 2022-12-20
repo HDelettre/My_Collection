@@ -1,20 +1,26 @@
-const express = require('express');
+const express = require("express");
 
-require("dotenv").config({path: "./config/.env"});
+const cors = require("cors");
+
+require("dotenv").config({ path: "./config/.env" });
 
 // MYSQL / SEQUELIZE
-const sequelize = require('./config/database.config');
-// Synchronization of models
-require('./models/dieCast');
-sequelize.sync({alter: true});
+(async () => {
+  const sequelize = require("./config/database.config");
+  // Synchronization of models
+  require("./models/dieCast");
+  await sequelize.sync({ force: true });
+})();
 
 // PATH TO ROUTES
 // const authRoutes = require('./Routes/users');
-const routeDiecast = require('./routes/diecast');
+const routeDiecast = require("./routes/diecast");
 
 const app = express();
 
-app.use('/pictures', express.static(__dirname + "/pictures"));
+app.use("/pictures", express.static(__dirname + "/pictures"));
+
+//app.use(cors);
 
 // CORS
 app.use((req, res, next) => {
@@ -33,7 +39,7 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 // ROUTES CALLING
-app.use('/api/diecast', routeDiecast);
+app.use("/api/diecast", routeDiecast);
 // app.use('/api/auth', authRoutes);
 
 // EXPORTS

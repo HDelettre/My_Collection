@@ -5,12 +5,17 @@ const Diecast = require("../models/dieCast");
 //
 
 exports.createDiecast = (req, res) => {
+  console.log("BACKEND REQUEST", req.body);
+  const newDiecast = Diecast.build(req.body);
+  console.log('newdiecast', newDiecast);
   (async () => {
-    const newDiecast = Diecast.build(
-     req.body
-    );
-    await newDiecast.save();
-    return res.status(200).json({ message: "createDiecast" });
+    try {
+      
+      await newDiecast.save();
+      return res.status(200).json({ message: "createDiecast" });
+    } catch (error) {
+      return res.status(400).json({ message: "Erreur ", error });
+    }
   })();
 };
 
@@ -19,7 +24,6 @@ exports.createDiecast = (req, res) => {
 //
 
 exports.getOneDiecast = (req, res) => {
-  console.log("reqparams: ", req.params.id);
   (async () => {
     try {
       const reponse = await Diecast.findOne({
@@ -39,6 +43,7 @@ exports.getOneDiecast = (req, res) => {
 //
 
 exports.getAllDiecast = (req, res) => {
+  console.log(req.body);
   (async () => {
     try {
       const reponse = await Diecast.findAll();
@@ -54,19 +59,17 @@ exports.getAllDiecast = (req, res) => {
 //
 
 exports.updateDiecast = (req, res) => {
-  ( async () => {
+  (async () => {
     try {
-      await Diecast.update(
-      req.body ,
-      { where: {
-        model_id: req.params.id
-      }}
-    )
-    return res.status(202).json({message: "MODIFIED !"})
-    }catch (error) {
+      await Diecast.update(req.body, {
+        where: {
+          model_id: req.params.id,
+        },
+      });
+      return res.status(202).json({ message: "MODIFIED !" });
+    } catch (error) {
       res.status(404).json({ message: "NOT MODIFIED", error });
     }
-    
   })();
 };
 
@@ -75,15 +78,15 @@ exports.updateDiecast = (req, res) => {
 //
 
 exports.deleteDiecast = (req, res) => {
-  ( async () => {
+  (async () => {
     try {
       await Diecast.destroy({
         where: {
-          model_id: req.params.id
-        }
-      })
-      return res.status(200).json({message: 'DELETED'});
-    }catch (error) {
+          model_id: req.params.id,
+        },
+      });
+      return res.status(200).json({ message: "DELETED" });
+    } catch (error) {
       res.status(404).json({ message: "NOT DELETED", error });
     }
   })();

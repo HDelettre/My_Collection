@@ -20,10 +20,11 @@
   background-color: $couleur_background;
   border-bottom: 2px solid $couleur_tertiaire;
   border-left: 2px solid $couleur_tertiaire;
-  border-radius: $radius_small;
+  border-bottom-left-radius: $radius_small;
   padding: $margin_medium;
+  padding-left: $margin_xxl;
   margin: $margin_medium_large;
-  margin-left: $margin_xxl;
+  margin-left: $margin_xxl*1.5;
   font-size: $font_h2;
   font-weight: 600;
 }
@@ -89,4 +90,20 @@
   color:$couleur_secondaire;
   font-size: $font_xlarge;
   cursor: pointer;
+}
+
+.error_message {
+  font-size: $font_xlarge;
+  font-weight: 600;
+  color: $couleur_primaire;
+  margin: $margin_medium;
+  border: 2px solid $couleur_primaire;
+  padding: $margin_medium_large;
+
+  .icons {
+    color:$couleur_primaire;
+    font-size: $font_xlarge;
+    margin: 0 $margin_medium;
+    cursor: none;
+  }
 }
