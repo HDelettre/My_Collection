@@ -9,7 +9,8 @@ require("dotenv").config({ path: "./config/.env" });
   const sequelize = require("./config/database.config");
   // Synchronization of models
   require("./models/dieCast");
-  await sequelize.sync({ force: true });
+  require('./models/diecast.pictures');
+  await sequelize.sync({ alter: true });
 })();
 
 // PATH TO ROUTES

@@ -55,6 +55,11 @@ const NewmodelForm = () => {
 
     const reponse = fetchCreateModel(modelData);
     console.log(reponse)
+
+    if (file) {
+      console.log('Il y a un fichier');
+      
+    }
   };
 
   const optionSelect = (e) => {
