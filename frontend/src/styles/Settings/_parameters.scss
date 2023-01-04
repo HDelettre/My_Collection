@@ -1,7 +1,6 @@
 * {
-  box-sizing: content-box;
+  box-sizing: border-box;
   font-family: $font_style_std;
-  color: $couleur_fonts;
   background-color: $couleur_background;
   font-size: $font_standard;
 }
@@ -11,6 +10,7 @@ body {
 }
 
 #root {
+  color: $couleur_fonts;
   width: 100%;
   display: flex;
   flex-direction: column;

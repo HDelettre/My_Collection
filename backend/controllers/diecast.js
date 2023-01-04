@@ -12,7 +12,7 @@ exports.createDiecast = (req, res) => {
     try {
       
       await newDiecast.save();
-      return res.status(200).json({ message: "createDiecast" });
+      return res.status(200).json({ newDiecast });
     } catch (error) {
       return res.status(400).json({ message: "Erreur ", error });
     }
@@ -43,7 +43,7 @@ exports.getOneDiecast = (req, res) => {
 //
 
 exports.getAllDiecast = (req, res) => {
-  console.log(req.body);
+  console.log('GET ALL DIECAST');
   (async () => {
     try {
       const reponse = await Diecast.findAll();

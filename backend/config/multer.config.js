@@ -8,6 +8,7 @@ const MIME_TYPES = {
 
 const storage = multer.diskStorage({
   destination: (req, file, callback) => {
+    console.log('MULTER: ', file.fieldname);
     if (file.fieldname === 'model_picture') {
       callback(null, "pictures/diecasts");
     } else {
@@ -17,11 +18,10 @@ const storage = multer.diskStorage({
 
   filename: (req, file, callback) => {
     const fileExtension = MIME_TYPES[file.mimetype];
+    console.log('MIME TYPES: ', fileExtension);
     let fileName = "";
     if (file.fieldname === 'model_picture') {
-      //const name = file.originalname.split(' ').join('_');
-      // fileName = name.split('.')[0] + '_' + Date.now() + '.' + fileExtension;
-      const name = req.body.diecast_id + '_' + Date.now() + '.' + fileExtension;
+      fileName = req.body.diecast_id + '_' + Date.now() + '.' + fileExtension;
     } else {
       fileName = req.params.id + '.' + fileExtension;
     }

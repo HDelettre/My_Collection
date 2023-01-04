@@ -10,20 +10,18 @@ const HomeContainer = () => {
   const[allModels, setAllModels] = useState('');
 
 useEffect(() => {
-  console.log('USE EFFECT')
   async function fetchModel() {
     const reponse = await fetch (`${process.env.REACT_APP_API_MODEL}diecast/`, {
       method: 'GET',    
     });
     const reponseJSON = await reponse.json();
     setAllModels(reponseJSON);
-    
+    console.log('REPONSE FETCH MODEL: ', allModels)
   };
   if (!allModels) {
     fetchModel()
   } else {
     const threeEnd = [allModels.slice(-3)]
-    console.log(allModels, ' / ', threeEnd)
   };
 }, [setAllModels, allModels]);
 

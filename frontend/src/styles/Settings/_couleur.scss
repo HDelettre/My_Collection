@@ -7,4 +7,6 @@ $couleur_background: #eeeeee;
 $couleur_background_light: lighten($couleur_background, 10%);
 $couleur_background_dark: darken($couleur_background, 20%);
 
-$couleur_fonts: black;
+$couleur_fonts: $couleur_secondaire;
+
+$couleur_fontBtn: yellow;

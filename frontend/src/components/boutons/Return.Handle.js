@@ -10,7 +10,7 @@ const ReturnHandle = () => {
 
   return (
     <div className="bouton" onClick={returnHandle}>
-      RETOUR
+      ACCUEIL
     </div>
   );
 };

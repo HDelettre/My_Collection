@@ -1,30 +1,15 @@
-// .container {
-//   width: 95%;
-//   display: flex;
-//   flex-direction: column;
-//   box-sizing: border-box;
-//   padding: $margin_medium;
-//   background-color: white;
-//   border-radius: $radius_medium;
-//   margin-bottom: $margin_xxl;
-
-//   &_text {
-//     padding-top: $margin_medium;
-//   }
-// }
-
 .titlebloc {
   width: 80%;
   align-self: flex-start;
   color: $couleur_secondaire;
   background-color: $couleur_background;
-  border-bottom: 2px solid $couleur_tertiaire;
-  border-left: 2px solid $couleur_tertiaire;
+  border-bottom: 4px solid $couleur_primaire;
+  border-left: 4px solid $couleur_primaire;
   border-bottom-left-radius: $radius_small;
   padding: $margin_medium;
   padding-left: $margin_xxl;
   margin: $margin_medium_large;
-  margin-left: $margin_xxl*1.5;
+  margin-left: $margin_xxl * 1.5;
   font-size: $font_h2;
   font-weight: 600;
 }
@@ -33,7 +18,7 @@
   width: 95%;
   background-color: $couleur_quatre;
   margin: $margin_medium_large;
-  border: 2px solid $couleur_secondaire;
+  // border: 3px solid $couleur_secondaire;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -51,22 +36,21 @@
 
 .bouton {
   background-color: $couleur_tertiaire;
-  color: yellow;
+  color: $couleur_fontBtn;
   padding: $margin_medium;
   border-radius: $radius_small;
   font-size: $font_standard;
   text-align: center;
   margin-left: $margin_medium_large;
   cursor: pointer;
-  width: 120px;
+  min-width: 125px;
   transition: 500ms;
   border: 2px solid $couleur_tertiaire;
-  
 
   &:hover {
     background-color: $couleur_secondaire;
   }
-  
+
   &_select {
     border: 2px solid $couleur_secondaire;
   }
@@ -82,12 +66,11 @@
     font-weight: 600;
     max-width: 60px;
     cursor: pointer;
-
   }
 }
 
 .icons {
-  color:$couleur_secondaire;
+  color: $couleur_secondaire;
   font-size: $font_xlarge;
   cursor: pointer;
 }
@@ -101,7 +84,7 @@
   padding: $margin_medium_large;
 
   .icons {
-    color:$couleur_primaire;
+    color: $couleur_primaire;
     font-size: $font_xlarge;
     margin: 0 $margin_medium;
     cursor: none;

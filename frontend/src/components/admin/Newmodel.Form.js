@@ -3,9 +3,6 @@ import React, { useState } from "react";
 // IMPORT COMPONENTS
 import TitleBloc from "../Standard/Title.Bloc";
 
-// IMPORT FUNCTION
-import { fetchCreateModel } from "../../utils/fetch.createModel";
-
 const NewmodelForm = () => {
   const [status, setStatus] = useState("commande");
   const [errorMessage, setErrorMessage] = useState("");
@@ -32,34 +29,53 @@ const NewmodelForm = () => {
       ref: reference,
       status: status,
     };
-//     ( async () => {
-// try {
-//   console.log('CLIC FROM FETCH: ', modelData);
-//   const reponse = await fetch (`${process.env.REACT_APP_API_MODEL}diecast`, {
-//     method: 'POST',
-//     body: JSON.stringify(modelData),
-//     headers: {"Content-Type": "application/json"}
-//   });
-//   console.log('REPONSE FROM FETCH: ', reponse);
-// } catch (error) {}
-
-      
-    // })();
-    // fetch (`${process.env.REACT_APP_API_MODEL}diecast`, {
-    //       method: 'POST',
-    //       body: JSON.stringify(modelData),
-    //       headers: {"Content-Type": "application/json"}
-    //     })
-    //     .then((reponse) => console.log(reponse))
-    //     .catch((error) => console.log(error));
-
-    const reponse = fetchCreateModel(modelData);
-    console.log(reponse)
-
-    if (file) {
-      console.log('Il y a un fichier');
-      
-    }
+    (async () => {
+      try {
+        const reponse = await fetch(
+          `${process.env.REACT_APP_API_MODEL}diecast`,
+          {
+            method: "POST",
+            body: JSON.stringify(modelData),
+            headers: { "Content-Type": "application/json" },
+          }
+        );
+        if (reponse.ok) {
+          const reponseJSON = await reponse.json();
+          setErrorMessage("Le nouveau modèle a été ajouté avec succès !");
+          if (file) {
+            const newPicture = new FormData();
+            newPicture.append("diecast_id", reponseJSON.newDiecast.model_id);
+            newPicture.append("model_picture", file);
+            console.log("NEW PICTURE: ", newPicture);
+            (async () => {
+              try {
+                const savePicture = await fetch(
+                  `${process.env.REACT_APP_API_MODEL}diecast/addpict`,
+                  {
+                    method: "POST",
+                    body: newPicture,
+                    // headers: {"Content-Type": "application/json"}
+                  }
+                );
+                if (savePicture.ok) {
+                  setErrorMessage(
+                    "Le nouveau modèle et l'image ont été ajoutés avec succès !"
+                  );
+                } else {
+                  setErrorMessage("Erreur durant la sauvegarde de l'image :(");
+                }
+              } catch (error) {
+                setErrorMessage("Erreur durant la sauvegarde de l'image :(");
+              }
+            })();
+          }
+        } else {
+          setErrorMessage("Erreur durant la sauvegarde du modèle :(");
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    })();
   };
 
   const optionSelect = (e) => {

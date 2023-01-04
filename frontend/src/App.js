@@ -5,6 +5,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './components/home/Home.Container';
 import LoginContainer from './components/login/Login.Container';
 import AdminContainer from "./components/admin/Admin.Container";
+import ByYearsContainer from "./components/byYears/By.Years.Container";
+import ByconstructorsContainer from "./components/byConstructors/Byconstructors.Container";
+import BydriversContainer from "./components/byDrivers/Bydrivers.Container";
 
 function App() {
   return (
@@ -13,6 +16,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Login" element={<LoginContainer />} />
         <Route path="/Admin" element={<AdminContainer />} />
+        <Route path="/Seasons" element={<ByYearsContainer />} />
+        <Route path="/Constructors" element={<ByconstructorsContainer />} />
+        <Route path="/Drivers" element={<BydriversContainer />} />
       </Routes>
     </BrowserRouter>
   );

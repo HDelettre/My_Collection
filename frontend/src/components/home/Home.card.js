@@ -1,21 +1,25 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const HomeCard = ({data}) => {
-
+  const navigate = useNavigate();
+  
   const navigationHandle = (e) => {
-    // navigate(`/${e.target.id}`);
+    navigate(`/${e.target.id}`);
   };
 
   return (
     <div className="navigation_card">
-      <img
+      <div className='navigation_card--image'>
+        <img
         src={`${process.env.REACT_APP_PICTURES}assets/${data.imageUrl}`}
         alt=""
         onClick={navigationHandle}
         id={data.section}
       />
-
-      <p>{data.title}</p>
+      </div>
+      
+      <h3>{data.title}</h3>
     </div>
   );
 }
