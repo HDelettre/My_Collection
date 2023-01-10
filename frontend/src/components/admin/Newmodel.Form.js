@@ -46,7 +46,7 @@ const NewmodelForm = () => {
             const newPicture = new FormData();
             newPicture.append("diecast_id", reponseJSON.newDiecast.model_id);
             newPicture.append("model_picture", file);
-            console.log("NEW PICTURE: ", newPicture);
+            
             (async () => {
               try {
                 const savePicture = await fetch(

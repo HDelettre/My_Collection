@@ -1,0 +1,25 @@
+.fullContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  justify-content: space-evenly;
+  align-content: space-around;
+}
+
+.vignette {
+  width: 20%;
+  border: 1px solid black;
+  margin: $margin_medium;
+  text-align: center;
+
+  &_picture {
+    width:100%;
+    text-align: center;
+
+    img {
+      object-fit: cover;
+      width: 95%;
+      margin: $margin_small;
+    }
+  }
+}

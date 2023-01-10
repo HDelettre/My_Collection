@@ -47,6 +47,24 @@
   transition: 500ms;
   border: 2px solid $couleur_tertiaire;
 
+  &_retour {
+    background-color: $couleur_tertiaire;
+
+    padding: $margin_medium;
+    border-radius: $radius_small;
+    font-size: $font_standard;
+    text-align: center;
+    margin-left: $margin_medium_large;
+    cursor: pointer;
+    transition: 500ms;
+    border: 2px solid $couleur_tertiaire;
+    color: $couleur_fontBtn;
+
+    &:hover {
+      background-color: $couleur_secondaire;
+    }
+  }
+
   &:hover {
     background-color: $couleur_secondaire;
   }
@@ -88,5 +106,76 @@
     font-size: $font_xlarge;
     margin: 0 $margin_medium;
     cursor: none;
+  }
+}
+
+.presentBloc {
+  width: 70%;
+  height: 40px;
+  display: flex;
+  margin: $margin_medium;
+
+  &_title {
+    width: 20%;
+    padding: $margin_small;
+    font-size: $font_large;
+    line-height: 40px;
+
+    img {
+      height: 18px;
+      margin-left: $margin_xlarge;
+    }
+  }
+
+  &_data {
+    width: 60%;
+    background-color: $couleur_background_dark;
+    padding: $margin_small;
+    text-align: center;
+    font-size: $font_large;
+    line-height: 40px;
+
+    img {
+      height: 18px;
+      margin-left: $margin_xlarge;
+    }
+
+    textarea {
+      width: 100%;
+      text-align: center;
+      border: none;
+      background-color: $couleur_background_dark;
+      margin: 0;
+
+      &:focus {
+        border: none;
+      }
+    }
+  }
+
+  &_bar {
+    width: 20%;
+    text-align: center;
+
+    i {
+      font-size: $font_large;
+      padding: $margin_small;
+      cursor: pointer;
+    }
+  }
+}
+
+.gallerie {
+  width: 90%;
+  display: flex;
+  justify-content: space-evenly;
+
+  &_image {
+    width: 25%;
+
+    img {
+      width: 95%;
+      object-fit: cover;
+    }
   }
 }

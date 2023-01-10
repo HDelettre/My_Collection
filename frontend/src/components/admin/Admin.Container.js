@@ -6,6 +6,9 @@ import NewModelButton from '../boutons/NewModel.Button';
 import ReturnHandle from '../boutons/Return.Handle';
 import NewmodelForm from './Newmodel.Form';
 import NewuserForm from './Newuser.Form';
+import UpdateModels from '../boutons/Update.Models';
+import UpdateModelForm from './UpdateModel.Form';
+import ReturnOne from '../boutons/Return.One';
 
 const AdminContainer = () => {
 
@@ -18,12 +21,18 @@ const AdminContainer = () => {
       <div className='navbar'>
         <NewUserButton setAdminOption={setAdminOption} />
         <NewModelButton setAdminOption={setAdminOption} />
+        <UpdateModels setAdminOption={setAdminOption} />
         <ReturnHandle />
+        <ReturnOne />
       </div>
 
       { adminOption === 'newModel' ? (<NewmodelForm />) : ('')}
 
       { adminOption === 'newUser' ? (<NewuserForm />) : ('')}
+
+      { adminOption === 'updateModel' ? (<UpdateModelForm />) : ('')}
+
+
     </>
   );
 }

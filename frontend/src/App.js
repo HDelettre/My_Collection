@@ -8,6 +8,7 @@ import AdminContainer from "./components/admin/Admin.Container";
 import ByYearsContainer from "./components/byYears/By.Years.Container";
 import ByconstructorsContainer from "./components/byConstructors/Byconstructors.Container";
 import BydriversContainer from "./components/byDrivers/Bydrivers.Container";
+import MiniatureContainer from "./components/miniatures/Miniature.Container";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/Seasons" element={<ByYearsContainer />} />
         <Route path="/Constructors" element={<ByconstructorsContainer />} />
         <Route path="/Drivers" element={<BydriversContainer />} />
+        <Route path="/Model/:id" element={<MiniatureContainer />} />
       </Routes>
     </BrowserRouter>
   );

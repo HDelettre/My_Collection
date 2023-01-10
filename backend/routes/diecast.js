@@ -15,6 +15,8 @@ router.get('/:id', diecastCtrl.getOneDiecast);
 router.patch('/:id', diecastCtrl.updateDiecast);
 router.delete('/:id', diecastCtrl.deleteDiecast);
 
+router.get('/year/:id', diecastCtrl.getAllDiecastByYear);
+
 router.post('/addpict',multer, pictCtrl.addPicture);
 router.get('/addpict/:id', pictCtrl.getOnePicture);
 

@@ -5,12 +5,9 @@ const Diecast = require("../models/dieCast");
 //
 
 exports.createDiecast = (req, res) => {
-  console.log("BACKEND REQUEST", req.body);
   const newDiecast = Diecast.build(req.body);
-  console.log('newdiecast', newDiecast);
   (async () => {
     try {
-      
       await newDiecast.save();
       return res.status(200).json({ newDiecast });
     } catch (error) {
@@ -43,7 +40,6 @@ exports.getOneDiecast = (req, res) => {
 //
 
 exports.getAllDiecast = (req, res) => {
-  console.log('GET ALL DIECAST');
   (async () => {
     try {
       const reponse = await Diecast.findAll();
@@ -88,6 +84,25 @@ exports.deleteDiecast = (req, res) => {
       return res.status(200).json({ message: "DELETED" });
     } catch (error) {
       res.status(404).json({ message: "NOT DELETED", error });
+    }
+  })();
+};
+
+//
+// DIECAST SEARCH BY YEAR
+//
+
+exports.getAllDiecastByYear = (req, res) => {
+  (async () => {
+    try {
+      const reponse = await Diecast.findAll({
+        where: {
+          year: req.params.id
+        }
+      });
+      return res.status(200).send(reponse);
+    } catch (error) {
+      res.status(404).json({ message: "NON TROUVE", error });
     }
   })();
 };

@@ -1,10 +1,13 @@
 import React, {useEffect, useState} from "react";
+import { useNavigate } from "react-router-dom";
 
 import imageDefault from '../../assets/default_picture.jpg';
 
 const HomeLatest = ({ data }) => {
   const [imageName, setImageName] = useState('');
   const [imageValid, setImageValid] = useState(false);
+
+  const navigate = useNavigate();
   
   useEffect(() => {
     async function fetchPictures() {
@@ -22,12 +25,16 @@ const HomeLatest = ({ data }) => {
     if (!imageName) fetchPictures();
   }, [setImageName, imageName, setImageValid]);
 
+  const selectHandle = (e) => {
+    navigate(`/model/${e.target.id}`);
+  }
+
   return  (
     <>
       <div className="navigation_card">
-        <div className="navigation_card--image">
+        <div className="navigation_card--image" onClick={selectHandle}>
         {imageValid ? (
-          <img src={`${process.env.REACT_APP_PICTURES}diecasts/${imageName}`} alt="" />
+          <img src={`${process.env.REACT_APP_PICTURES}diecasts/${imageName}`} alt="" id={data.model_id} />
           ) : (
             <img src={imageDefault} />
         )} 

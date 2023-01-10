@@ -1,0 +1,8 @@
+.footerContainer {
+  width: 95%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: $margin_xlarge;
+  margin-bottom: $margin_medium;
+  border-top: 3px solid $couleur_tertiaire;
+}
